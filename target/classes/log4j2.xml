@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<Configuration status="off">
+
+	<!-- Properties は、name の値を変数として使える -->
+	<Properties>
+		<Property name="format1">%d{yyyy/MM/dd HH:mm:ss.SSS} [%t] %-6p %c{10} %m%n</Property>
+		<Property name="logfile">./logs/application.log</Property>
+		<Property name="logfile-archive">./logs/application_%d{yyyy-MM-dd}-%i.log</Property>
+	</Properties>
+
+	<Appenders>
+		<!-- コンソールに出力する設定 -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>${format1}</pattern>
+			</PatternLayout>
+		</Console>
+
+		<!-- ファイルに出力する設定 -->
+		<RollingFile name="Daily" append="true" fileName="${logfile}" filePattern="${logfile-archive}">
+			<PatternLayout>
+				<pattern>${format1}</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="1000MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="365" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Root level="WARN">		
+			<AppenderRef ref="Daily" />
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>

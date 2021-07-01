@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>jgame</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <scm>
+      <connection>scm:git:https://github.com/shimoyama-sp/jgame</connection>
+      <developerConnection>scm:git:ssh://github.com/shimoyama-sp/jgame</developerConnection>
+  </scm>
+  <ciManagement>
+      <system>Javaで作成したゲーム</system>
+      <url>https://github.com/shimoyama-sp/jgame</url>
+  </ciManagement>
+  
+  <!-- More Project Information -->
+  <name>jGame</name>
+  <description>...</description>
+  <url>...</url>
+  <inceptionYear>...</inceptionYear>
+  <!-- 
+  <licenses></licenses>
+  <organization>...</organization>
+  <developers>...</developers>
+  <contributors>...</contributors>
+   -->
+   
+  <repositories>
+    <repository>
+      <url>http://download.java.net/maven/2/</url>
+      <id>hibernate-support</id>
+      <layout>default</layout>
+      <name>Repository for library Library[hibernate-support]</name>
+    </repository>
+  </repositories>
+    
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    
+  </dependencies>
+
+
+</project>
